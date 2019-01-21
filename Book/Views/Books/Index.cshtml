@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Book.Models.BookModel>
+
+@{
+    ViewBag.Title = "バーチャル図書館へようこそ！";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+<h2>Top</h2>
+
+
+<div>
+    <span>
+        <p style="float:left">
+            @Html.ActionLink("好きな本をレコード", "Create")
+        </p>
+
+        <a href="javascript:void(0);" onclick="GetBookList()" style="float:right">すべての本を検索</a>
+    </span>
+</div>
+@*@if (Model != null)
+{*@
+    <table class="table" id="table">
+        <tr id="tr">
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookPrice)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.IsEable)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th>操作</th>
+        </tr>
+
+        @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookPrice)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.IsEable)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.ActionLink("編集します", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("見ます", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("消えろ", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }*@
+
+    </table>
+<div id="content">
+
+</div>
+
